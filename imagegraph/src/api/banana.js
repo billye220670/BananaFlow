@@ -1,8 +1,7 @@
-const API_KEY = import.meta.env.VITE_BANANA_API_KEY;
-
 function getApiKey() {
-  if (!API_KEY) throw new Error('VITE_BANANA_API_KEY is not set in .env.local');
-  return API_KEY;
+  const key = localStorage.getItem('banana_api_key') || import.meta.env.VITE_BANANA_API_KEY;
+  if (!key) throw new Error('API key not set — open Settings (⚙️) to enter your BananaAnything key');
+  return key;
 }
 
 export function compressImage(dataURI, maxSide = 1024, quality = 0.6) {

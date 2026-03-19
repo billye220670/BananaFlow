@@ -97,7 +97,7 @@
 }
 
 .theme-toggle {
-  margin-left: auto;
+  margin-left: 6px;
   background: var(--bg-deep);
   border: 1px solid var(--border);
   border-radius: 8px;
