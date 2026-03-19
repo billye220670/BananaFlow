@@ -54,7 +54,8 @@ export async function pollUntilDone(taskId, { interval = 3000, timeout = 300000,
   while (Date.now() < deadline) {
     await new Promise((r) => setTimeout(r, interval));
     const res = await fetch(
-      `/banana-api/api/async/detail?key=${encodeURIComponent(getApiKey())}&id=${encodeURIComponent(taskId)}`
+      `/banana-api/api/async/detail?key=${encodeURIComponent(getApiKey())}&id=${encodeURIComponent(taskId)}&_t=${Date.now()}`,
+      { cache: 'no-store' }
     );
     if (!res.ok) throw new Error(`Poll failed: ${res.status}`);
     const json = await res.json();
