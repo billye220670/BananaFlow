@@ -1,0 +1,5 @@
+{
+  "buildCommand": "npm --prefix imagegraph run build",
+  "installCommand": "npm --prefix imagegraph install",
+  "outputDirectory": "imagegraph/dist"
+}
