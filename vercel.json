@@ -1,5 +1,9 @@
 {
   "buildCommand": "npm --prefix imagegraph run build",
   "installCommand": "npm --prefix imagegraph install",
-  "outputDirectory": "imagegraph/dist"
+  "outputDirectory": "imagegraph/dist",
+  "rewrites": [
+    { "source": "/banana-api/:path*", "destination": "https://api.wuyinkeji.com/:path*" },
+    { "source": "/upload-proxy/:path*", "destination": "https://tmpfiles.org/:path*" }
+  ]
 }
